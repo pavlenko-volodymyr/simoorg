@@ -59,8 +59,8 @@ class Atropos(object):
         The Atropos class
     """
 
-    @staticmethod
-    def spawn(*args, **kwargs):
+    @classmethod
+    def spawn(cls, *args, **kwargs):
         """
             Builder function for the atropos class.
             Init class and run it main functionality.
@@ -70,7 +70,7 @@ class Atropos(object):
             Raise:
                 None
         """
-        instance = Atropos(*args, **kwargs)
+        instance = cls(*args, **kwargs)
         scheduler = instance.get_scheduler()
         instance.main_loop(scheduler)
 
